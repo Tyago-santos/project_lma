@@ -14,8 +14,8 @@ export default [
         sobrenome: 'silva',
         idade: 23,
         endereco: 'bairro guarani',
-        organizacao:'Quórum de Elderes',
-        sexo: 'masculino',
+        organizacao:'Moças',
+        sexo: 'Feminino',
 
     },
 
@@ -26,7 +26,17 @@ export default [
         sobrenome: 'silva',
         idade: 23,
         endereco: 'bairro guarani',
-        organizacao:'Quórum de Elderes',
+        organizacao:'Moças',
+        sexo: 'Feminino',
+
+    },
+
+        {
+        name: 'João',
+        sobrenome: 'silva',
+        idade: 10,
+        endereco: 'bairro guarani',
+        organizacao:'Primária',
         sexo: 'masculino',
 
     },
@@ -34,29 +44,9 @@ export default [
         {
         name: 'João',
         sobrenome: 'silva',
-        idade: 23,
+        idade: 9,
         endereco: 'bairro guarani',
-        organizacao:'Quórum de Elderes',
-        sexo: 'masculino',
-
-    },
-
-        {
-        name: 'João',
-        sobrenome: 'silva',
-        idade: 23,
-        endereco: 'bairro guarani',
-        organizacao:'Quórum de Elderes',
-        sexo: 'masculino',
-
-    },
-
-        {
-        name: 'João',
-        sobrenome: 'silva',
-        idade: 23,
-        endereco: 'bairro guarani',
-        organizacao:'Quórum de Elderes',
+        organizacao:'Primária',
         sexo: 'masculino',
 
     },
@@ -69,7 +59,77 @@ export default [
         organizacao:'Quórum de Elderes',
         sexo: 'masculino',
 
-    }
+    },
+
+        {
+        name: 'João',
+        sobrenome: 'silva',
+        idade: 23,
+        endereco: 'bairro guarani',
+        organizacao:'Socidade de Socorro',
+        sexo: 'Feminino',
+
+    },
+
+            {
+        name: 'João',
+        sobrenome: 'silva',
+        idade: 23,
+        endereco: 'bairro guarani',
+        organizacao:'Quórum de Elderes',
+        sexo: 'masculino',
+
+    },
+
+            {
+        name: 'João',
+        sobrenome: 'silva',
+        idade: 23,
+        endereco: 'bairro guarani',
+        organizacao:'Socidade Socorro',
+        sexo: 'Feminino',
+
+    },
+
+            {
+        name: 'João',
+        sobrenome: 'silva',
+        idade: 23,
+        endereco: 'bairro guarani',
+        organizacao:'Rapazes',
+        sexo: 'masculino',
+
+    },
+
+            {
+        name: 'João',
+        sobrenome: 'silva',
+        idade: 23,
+        endereco: 'bairro guarani',
+        organizacao:'Moças',
+        sexo: 'Feminino',
+
+    },
+
+            {
+        name: 'João',
+        sobrenome: 'silva',
+        idade: 23,
+        endereco: 'bairro guarani',
+        organizacao:'Sociedade de Socorro',
+        sexo: 'Feminino',
+
+    },
+
+            {
+        name: 'João',
+        sobrenome: 'silva',
+        idade: 23,
+        endereco: 'bairro guarani',
+        organizacao:'Quórum de Elderes',
+        sexo: 'masculino',
+
+    },
 
 
 ];
