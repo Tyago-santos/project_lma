@@ -8,7 +8,7 @@ const  theme =   {
     background: "#1E1E1E",   // Fundo escuro
     surface: "#2C2C2C",      // Cinza escuro
     text: "#FFFFFF",         // Texto claro
-    button: "#007DA5"
+    button: "#a80853"
 
 }},
 
@@ -21,7 +21,7 @@ lightTheme :{
     background: "#FFFFFF",   // Branco
     surface: "#D5DBDB",      // Cinza Claro
     text: "#000000",
-    button: "#007DA5"
+    button: "#a80853"
 }
  }
 

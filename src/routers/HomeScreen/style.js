@@ -20,19 +20,15 @@ export const Container = styled.section`
     & .container {
         
         height:100%;
-
-        background-color:red;
+        background-color:#f2f2f2;
     
         }
         
         `;
-
-        export const HeaderTable = styled.div`
+export const HeaderTable = styled.div`
     width:100%;
-    
-    padding:0px 20px ;
-
     padding-top:20px;
+    
 
 
     & .wapper{
@@ -63,7 +59,7 @@ export const Container = styled.section`
 
         
         & .active{
-            border-bottom: red solid 3px;
+            border-bottom: ${props => props.theme.colors.button} solid 3px;
         
         }
 
@@ -88,6 +84,6 @@ export const Container = styled.section`
 export const Slider = styled(SwiperSlide)`
    height:100%;
 
-    background-color:green;
+
 
 `;
