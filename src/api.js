@@ -1,7 +1,8 @@
 export default [
     {
-        name: 'João',
-        sobrenome: 'silva',
+        
+        name: 'Ana',
+        sobrenome: 'Silva',
         idade: 23,
         endereco: 'bairro guarani',
         organizacao:'Quórum de Elderes',
@@ -9,9 +10,10 @@ export default [
 
     },
 
-        {
-        name: 'João',
-        sobrenome: 'silva',
+
+    {
+        name: 'Bruno',
+        sobrenome: 'Santos',
         idade: 23,
         endereco: 'bairro guarani',
         organizacao:'Moças',
@@ -19,11 +21,9 @@ export default [
 
     },
 
-
-
-        {
-        name: 'João',
-        sobrenome: 'silva',
+    {
+        name: 'Carla',
+        sobrenome: 'Oliveira',
         idade: 23,
         endereco: 'bairro guarani',
         organizacao:'Moças',
@@ -31,9 +31,9 @@ export default [
 
     },
 
-        {
-        name: 'João',
-        sobrenome: 'silva',
+    {
+        name: 'Daniel',
+        sobrenome: 'Pereira',
         idade: 10,
         endereco: 'bairro guarani',
         organizacao:'Primária',
@@ -41,9 +41,10 @@ export default [
 
     },
 
-        {
-        name: 'João',
-        sobrenome: 'silva',
+
+    {
+        name: 'Eduarda',
+        sobrenome: 'Costa',
         idade: 9,
         endereco: 'bairro guarani',
         organizacao:'Primária',
@@ -51,9 +52,10 @@ export default [
 
     },
 
-        {
-        name: 'João',
-        sobrenome: 'silva',
+
+    {
+        name: 'Felipe',
+        sobrenome: 'Rodrigues',
         idade: 23,
         endereco: 'bairro guarani',
         organizacao:'Quórum de Elderes',
@@ -61,9 +63,10 @@ export default [
 
     },
 
-        {
-        name: 'João',
-        sobrenome: 'silva',
+
+    {
+        name: 'Gabriela',
+        sobrenome: 'Almeida',
         idade: 23,
         endereco: 'bairro guarani',
         organizacao:'Socidade de Socorro',
@@ -71,9 +74,9 @@ export default [
 
     },
 
-            {
-        name: 'João',
-        sobrenome: 'silva',
+    {
+        name: 'Heitor',
+        sobrenome: 'Nunes',
         idade: 23,
         endereco: 'bairro guarani',
         organizacao:'Quórum de Elderes',
@@ -81,9 +84,10 @@ export default [
 
     },
 
-            {
-        name: 'João',
-        sobrenome: 'silva',
+
+    {
+        name: 'Isabela',
+        sobrenome: 'Mendes',
         idade: 23,
         endereco: 'bairro guarani',
         organizacao:'Socidade Socorro',
@@ -91,45 +95,60 @@ export default [
 
     },
 
-            {
-        name: 'João',
-        sobrenome: 'silva',
+
+    {
+        name: 'Lucas',
+        sobrenome: 'Carvalho',
+        idade: 23,
+        endereco: 'bairro guarani',
+        organizacao:'Rapazes',
+        sexo: 'masculino',
+
+    },    {
+        name: 'Mariana',
+        sobrenome: 'Gomes',
+        idade: 23,
+        endereco: 'bairro guarani',
+        organizacao:'Socidade de Socorro',
+        sexo: 'Feminino',
+
+    },
+    {
+        name: 'Pedro',
+        sobrenome: 'Martins',
         idade: 23,
         endereco: 'bairro guarani',
         organizacao:'Rapazes',
         sexo: 'masculino',
 
     },
-
-            {
-        name: 'João',
-        sobrenome: 'silva',
+    {
+        name: 'Rafaela',
+        sobrenome: 'Lima',
         idade: 23,
         endereco: 'bairro guarani',
         organizacao:'Moças',
         sexo: 'Feminino',
 
     },
-
-            {
-        name: 'João',
-        sobrenome: 'silva',
-        idade: 23,
-        endereco: 'bairro guarani',
-        organizacao:'Sociedade de Socorro',
-        sexo: 'Feminino',
-
-    },
-
-            {
-        name: 'João',
-        sobrenome: 'silva',
+    {
+        name: 'Thiago',
+        sobrenome: 'Souza',
         idade: 23,
         endereco: 'bairro guarani',
         organizacao:'Quórum de Elderes',
         sexo: 'masculino',
 
     },
+    {
+        name: 'Vitória',
+        sobrenome: 'Fernandes',
+        idade: 23,
+        endereco: 'bairro guarani',
+        organizacao:'Socidade de Socorro',
+        sexo: 'Feminino',
 
+    }
+    
 
 ];
