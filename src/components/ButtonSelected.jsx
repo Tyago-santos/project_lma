@@ -8,9 +8,17 @@ const Wrapper = styled.div`
         outline:none;
         border:none;
         font-family:'Roboto';
+        background-color:${props => props.theme.colors.surface};
+        color:${props => props.theme.colors.text};
+        border: 1px solid ${props => props.theme.colors.button};
+        border-radius:5px;
+
 
         &:hover{
             cursor:pointer;
+            background-color:${props => props.theme.colors.button};
+            color:${props => props.theme.colors.background};
+
         
         }
     }
@@ -25,6 +33,7 @@ const  ButtonSelected = () => {
     return (
     <Wrapper>
         <select name="" id="">
+            <option value="Todos">Todos</option>
             <option value="Quórun de Elderes">Quórun de Elderes</option>
             <option value="Sociedade de Socorro">Sociedade de Socorro</option>
             <option value="Moças">Moças</option>
