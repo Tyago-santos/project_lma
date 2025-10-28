@@ -1,13 +1,16 @@
 import React, {useRef, useState} from "react";
-import { TfiExchangeVertical } from "react-icons/tfi";
 
 
-import { Wrappper,Container,HeaderTable,Slider } from "./style";
+import { Wrappper,Container,HeaderTable,Slider } from "./style"; 
 
 import ButtonActions from '../../components/ButtonActions'
 import ButtonSelected from "../../components/ButtonSelected";
+import LessonPlan from "../../components/LessonPlan";
 
 import Table from '../../components/Table';
+
+import api from '../../api';
+
 
 import { Swiper, SwiperSlide, useSwiper} from 'swiper/react';
 import 'swiper/css';
@@ -19,6 +22,9 @@ export default function Home (){
     
     const [activePrev,setActivePrev] = useState(true);
     const [activeNext,setActiveNext] = useState(false);
+    const [person, SetPerson]= useState([]);
+
+
 
 
     const swiperRef = useRef(null); 
@@ -36,6 +42,18 @@ export default function Home (){
         setActiveNext(true);
         swiperRef.current.slideNext();
      
+    }
+
+    const handleChangeSpaceActive = () => {
+        swiperRef.current.activeIndex === 0 ? setActivePrev(true) : setActivePrev(false);
+        swiperRef.current.activeIndex === 1 ? setActiveNext(true) : setActiveNext(false);
+
+    }
+
+    const handleFilterPerson = (Value) => {
+        console.log(Value);
+        const newArr = api.filter(item => item.organizacao === Value);
+        SetPerson(newArr.length > 0 ? newArr : api);
     }
 
     return(
@@ -56,7 +74,7 @@ export default function Home (){
                             <button onClick={handleClickChangeSwiperPrev }  className={activePrev ? "table_button active": "table_button"}>Tabela</button>
                             <button onClick={handleClickChangeSwiperNext}    className={ activeNext?"plain_button active": "plain_button" }>Plano de ala</button>
                         </div>
-                     <ButtonSelected/>   
+                     <ButtonSelected  onSend={handleFilterPerson}/>   
                         
                     </div>
 
@@ -64,21 +82,39 @@ export default function Home (){
                 <div className="container">
                     <Swiper
                         
-                        style={{ height:'100%'}}
+                        style={{ height:'100%',}}
+
                                 spaceBetween={50}
                                 slidesPerView={1}
-                                onSlideChange={() => console.log('slide change')}
+                                onSlideChange={handleChangeSpaceActive}
                                 onSwiper={(swiper) => (swiperRef.current = swiper)}
 
                     >
                         <Slider > 
-                            <Table/>
+                            <Table Person={person} />
+                            
                         </Slider>
-                        <Slider> slider 2</Slider>
+                        <Slider style={{padding: 20}}> 
+                            <LessonPlan />
+                            <LessonPlan />
+                            <LessonPlan />
+                            <LessonPlan />  
+                            <LessonPlan />
+                            <LessonPlan /> 
+
+                        <LessonPlan />
+                            <LessonPlan />
+                            <LessonPlan />
+                            <LessonPlan />  
+                            <LessonPlan />
+                            <LessonPlan />   
+
+                        </Slider>
                 
                     </Swiper> 
                 </div>
             </Container>
+            
         </Wrappper>
     )
 }

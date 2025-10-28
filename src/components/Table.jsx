@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 
-import data from '../api';
 
 const Wapper = styled.table`
     width:100%;
@@ -26,7 +25,7 @@ const Wapper = styled.table`
 `;
 
 
-const Table = ()=> {    
+const Table = ({Person})=> {    
 
     
     
@@ -47,7 +46,7 @@ const Table = ()=> {
 
 
           <tbody>
-  {data.map((item, index) => (
+  {Person.map((item, index) => (
     <tr key={index}>
       <td>{item.name}</td>
       <td>{item.sobrenome}</td>
