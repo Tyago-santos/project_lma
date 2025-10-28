@@ -69,7 +69,7 @@ export default [
         sobrenome: 'Almeida',
         idade: 23,
         endereco: 'bairro guarani',
-        organizacao:'Socidade de Socorro',
+        organizacao:'Sociedade de Socorro',
         sexo: 'Feminino',
 
     },
@@ -90,7 +90,7 @@ export default [
         sobrenome: 'Mendes',
         idade: 23,
         endereco: 'bairro guarani',
-        organizacao:'Socidade Socorro',
+        organizacao:'Sociedade Socorro',
         sexo: 'Feminino',
 
     },
@@ -109,7 +109,7 @@ export default [
         sobrenome: 'Gomes',
         idade: 23,
         endereco: 'bairro guarani',
-        organizacao:'Socidade de Socorro',
+        organizacao:'Sociedade de Socorro',
         sexo: 'Feminino',
 
     },
@@ -145,7 +145,7 @@ export default [
         sobrenome: 'Fernandes',
         idade: 23,
         endereco: 'bairro guarani',
-        organizacao:'Socidade de Socorro',
+        organizacao:'Sociedade de Socorro',
         sexo: 'Feminino',
 
     }

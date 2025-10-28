@@ -11,7 +11,7 @@ export const Wrappper = styled.main`
     
     `;
     export const Container = styled.section`
-    height:85%;
+    height:90%;
     background-color: ${props => props.theme.colors.surface};
     max-width: 1200px;
     margin: 0 auto;
@@ -36,7 +36,7 @@ export const Wrappper = styled.main`
         `;
 export const HeaderTable = styled.div`
     width:100%;
-    padding-top:20px;
+    padding:20px 20px 0px 20px;
     
 
 
@@ -69,7 +69,8 @@ export const HeaderTable = styled.div`
         
         & .active{
             border-bottom: ${props => props.theme.colors.button} solid 3px;
-        
+            transition: .3s all;
+            color:${props => props.theme.colors.button} ;
         }
 
         & button{

@@ -1,4 +1,5 @@
-import React, {useRef, useState} from "react";
+
+import React, {useRef, useState,} from "react";
 
 
 import { Wrappper,Container,HeaderTable,Slider } from "./style"; 
@@ -50,10 +51,22 @@ export default function Home (){
 
     }
 
-    const handleFilterPerson = (Value) => {
-        console.log(Value);
-        const newArr = api.filter(item => item.organizacao === Value);
-        SetPerson(newArr.length > 0 ? newArr : api);
+   ;
+    const handleFilterPerson = (value) => {
+        console.log(value);
+        const newArr =  api.filter(item => { 
+                if (value == "Todos") {
+                    return api
+                }else{
+                    
+                    return item.organizacao == value 
+                }
+            
+            } ) ;
+
+        console.log(value);
+        SetPerson(newArr);
+
     }
 
     return(
@@ -91,7 +104,8 @@ export default function Home (){
 
                     >
                         <Slider > 
-                            <Table Person={person} />
+
+                            <Table Person={person.length  <1 ? api: person} />
                             
                         </Slider>
                         <Slider style={{padding: 20}}> 

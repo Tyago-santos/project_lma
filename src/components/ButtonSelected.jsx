@@ -1,4 +1,4 @@
-import react from 'react';
+import react, { useState, useRef } from 'react';
 import styled from 'styled-components'; 
 
 const Wrapper = styled.div`
@@ -29,16 +29,24 @@ const Wrapper = styled.div`
 `;
 
 
-const  ButtonSelected = () => {
+const  ButtonSelected = ({onSend}) => {
+        const [valueSelect, setValueSelect] = useState();
+
+
+        const handleChangeValueSelect = (e => {
+            setValueSelect(e.target.value);
+            onSend(e.target.value);
+        })
+
     return (
     <Wrapper>
-        <select name="" id="">
+        <select  onChange={handleChangeValueSelect} value={valueSelect} >
             <option value="Todos">Todos</option>
-            <option value="Quórun de Elderes">Quórun de Elderes</option>
+            <option value="Quórum de Elderes">Quórun de Elderes</option>
             <option value="Sociedade de Socorro">Sociedade de Socorro</option>
             <option value="Moças">Moças</option>
             <option value="Primária">Primária</option>
-            <option value="Rapaz">Rapaz</option>
+            <option value="Rapazes">Rapaz</option>
         </select>
         
     </Wrapper>

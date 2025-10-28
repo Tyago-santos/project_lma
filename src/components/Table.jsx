@@ -27,7 +27,7 @@ const Wapper = styled.table`
 
 const Table = ({Person})=> {    
 
-    
+    console.log(Person);
     
 
     return (

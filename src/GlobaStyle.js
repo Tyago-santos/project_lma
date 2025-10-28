@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     font-family:'Roboto';
 
-    background-color:${props => props.theme.colors.bacground};
+    background-color:${props => props.theme.colors.background};
 
     }
 
