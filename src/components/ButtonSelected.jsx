@@ -17,7 +17,7 @@ const Wrapper = styled.div`
         &:hover{
             cursor:pointer;
             background-color:${props => props.theme.colors.button};
-            color:${props => props.theme.colors.background};
+            color:#fff;
 
         
         }

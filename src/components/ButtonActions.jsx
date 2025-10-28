@@ -13,6 +13,18 @@ const Button = styled.button`
     display: ${props => props.Icone ? 'flex': 'block'};
     justify-content:space-between;
     align-items:center;
+    border: 1px solid transparent ;
+    font-weight:bold;
+    trasition .3s all;
+
+    &:hover{
+        background-color:${props => props.theme.colors.surface};     
+        border: 1px solid ${props => props.theme.colors.button} ;       
+        color:${props => props.theme.colors.button} ;      
+        
+        trasition .3s all;
+        
+    }
 
     
 

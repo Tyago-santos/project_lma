@@ -29,12 +29,14 @@ const Logo = styled.a`
     height:100px;
     width:100px;
     display:block;
-
-
+    
+    
     & img{
+        border-radius:20px;
         max-height:100%;
         max-width:100%;
         display:block;
+        bacground-color: #fff;
     }
 
 `;
@@ -56,7 +58,7 @@ const Header = ()=>{
         <Wrapper>
             <Container>
                 <Logo>   
-                    <img src="/logo_jesus.webp"/>
+                    <img src="/logo.png" alt="logo"/>
                 </Logo>
                 <Nav>
                     <Switch

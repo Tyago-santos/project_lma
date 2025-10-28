@@ -5,12 +5,23 @@ import data from '../api';
 
 const Wapper = styled.table`
     width:100%;
-    hidden:auto
-
+    color: ${props => props.theme.colors.text};
+    
+    
     & th{
+        background-color: ${props => props.theme.colors.surface};
         font-size:1.2rem;
+        color:${props => props.theme.colors.text};
     }
 
+    & tr{
+        text-align:center;
+    }
+
+    & tr:hover td{
+        cursor:pointer;
+        background-color: ${props => props.theme.colors.surface};
+    }
 
 `;
 
@@ -22,7 +33,7 @@ const Table = ()=> {
 
     return (
         <Wapper >
-            <thead style={{ backgroundColor: "#f2f2f2" }}>
+            <thead>
                 <tr>
                     <th>Nome</th>
                     <th>Sobrenome</th>
@@ -30,6 +41,7 @@ const Table = ()=> {
                     <th>Endereço</th>
                     <th>Organização</th>
                     <th>Sexo</th>
+                    
                 </tr>
             </thead>
 
