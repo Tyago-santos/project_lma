@@ -7,20 +7,26 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './store.js';
 import { useSelector } from 'react-redux';
-// eslint-disable-next-line
-const theme = useSelector((state) => state.theme.themeDark);
 
 import valueTheme from './theme.js';
+
+function RootComponents() {
+    const theme = useSelector((state) => state.theme.themeDark);
+    return (
+        <BrowserRouter>
+            <ThemeProvider
+                theme={theme ? valueTheme.darkTheme : valueTheme.lightTheme}
+            >
+                <App />
+            </ThemeProvider>
+        </BrowserRouter>
+    );
+}
+
 createRoot(document.getElementById('root')).render(
     <StrictMode>
-        <BrowserRouter>
-            <Provider store={store}>
-                <ThemeProvider
-                    theme={theme ? valueTheme.darkTheme : valueTheme.lightTheme}
-                >
-                    <App />
-                </ThemeProvider>
-            </Provider>
-        </BrowserRouter>
+        <Provider store={store}>
+            <RootComponents />
+        </Provider>
     </StrictMode>,
 );
