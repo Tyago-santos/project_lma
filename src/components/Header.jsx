@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { useTheme } from 'styled-components';
 import Switch from 'react-switch';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -40,11 +40,13 @@ const Nav = styled.nav`
 
 const Header = () => {
     const theme = useSelector((state) => state.theme.themeDark);
-
     const dispatch = useDispatch();
     const handleChangeTheme = () => {
         dispatch(changeTheme({ themeDark: !theme }));
     };
+
+    const themeChecked = useTheme();
+
     return (
         <Wrapper>
             <Container>
@@ -60,6 +62,9 @@ const Header = () => {
                         draggable={false}
                         checkedIcon={false}
                         uncheckedIcon={false}
+                        onColor={themeChecked.colors.text}
+                        offColor={themeChecked.colors.button}
+                        onHandleColor={themeChecked.colors.button}
                     />
                     <ButtonActions Icone={true}>
                         Criar nova tabela
