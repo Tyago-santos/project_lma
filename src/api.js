@@ -1,154 +1,186 @@
-export default [
+// membrosData.js
+
+const membros = [
     {
-        
-        name: 'Ana',
+        id: 1,
+        nome: 'Ana',
         sobrenome: 'Silva',
         idade: 23,
-        endereco: 'bairro guarani',
-        organizacao:'Quórum de Elderes',
-        sexo: 'masculino',
-
+        sexo: 'Feminino',
+        endereco: 'Bairro Guarani, Rua 10',
+        organizacao: 'Sociedade de Socorro',
+        dataDeBatismo: '2008-07-20',
+        descricao:
+            'Voluntária ativa no projeto de serviço comunitário mensal. Ótima coordenadora de eventos.',
     },
-
-
     {
-        name: 'Bruno',
+        id: 2,
+        nome: 'Bruno',
         sobrenome: 'Santos',
         idade: 23,
-        endereco: 'bairro guarani',
-        organizacao:'Moças',
-        sexo: 'Feminino',
-
+        sexo: 'Masculino',
+        endereco: 'Bairro Guarani, Av. Principal',
+        organizacao: 'Quórum de Elderes',
+        dataDeBatismo: '2008-09-10',
+        descricao:
+            'Especialista em TI. Ajuda com a manutenção do site da organização. Membro novo na ala.',
     },
-
     {
-        name: 'Carla',
+        id: 3,
+        nome: 'Carla',
         sobrenome: 'Oliveira',
         idade: 23,
-        endereco: 'bairro guarani',
-        organizacao:'Moças',
         sexo: 'Feminino',
-
+        endereco: 'Bairro Guarani, Bloco B',
+        organizacao: 'Moças',
+        dataDeBatismo: '2008-01-25',
+        descricao:
+            'Mudou-se recentemente para a cidade. Necessita de acompanhamento dos líderes.',
     },
-
     {
-        name: 'Daniel',
+        id: 4,
+        nome: 'Daniel',
         sobrenome: 'Pereira',
         idade: 10,
-        endereco: 'bairro guarani',
-        organizacao:'Primária',
-        sexo: 'masculino',
-
+        sexo: 'Masculino',
+        endereco: 'Bairro Guarani, Casa 5',
+        organizacao: 'Primária',
+        dataDeBatismo: '2023-03-18',
+        descricao:
+            'Adora cantar. Seus pais são membros da Sociedade de Socorro.',
     },
-
-
     {
-        name: 'Eduarda',
+        id: 5,
+        nome: 'Eduarda',
         sobrenome: 'Costa',
         idade: 9,
-        endereco: 'bairro guarani',
-        organizacao:'Primária',
-        sexo: 'masculino',
-
+        sexo: 'Feminino',
+        endereco: 'Bairro Guarani, Lote 12',
+        organizacao: 'Primária',
+        dataDeBatismo: '2024-01-14',
+        descricao:
+            'Muito interessada nas atividades da Primária. Seu aniversário é em Janeiro.',
     },
-
-
     {
-        name: 'Felipe',
+        id: 6,
+        nome: 'Felipe',
         sobrenome: 'Rodrigues',
         idade: 23,
-        endereco: 'bairro guarani',
-        organizacao:'Quórum de Elderes',
-        sexo: 'masculino',
-
+        sexo: 'Masculino',
+        endereco: 'Bairro Guarani, Apt 101',
+        organizacao: 'Quórum de Elderes',
+        dataDeBatismo: '2008-04-12',
+        descricao:
+            'Voluntário na manutenção da capela. Recém-formado em engenharia civil.',
     },
-
-
     {
-        name: 'Gabriela',
+        id: 7,
+        nome: 'Gabriela',
         sobrenome: 'Almeida',
         idade: 23,
-        endereco: 'bairro guarani',
-        organizacao:'Sociedade de Socorro',
         sexo: 'Feminino',
-
+        endereco: 'Bairro Guarani, Praça da Árvore',
+        organizacao: 'Sociedade de Socorro',
+        dataDeBatismo: '2008-09-07',
+        descricao:
+            'Professora de música. Ajuda com o coral da organização. Frequência 100%.',
     },
-
     {
-        name: 'Heitor',
+        id: 8,
+        nome: 'Heitor',
         sobrenome: 'Nunes',
         idade: 23,
-        endereco: 'bairro guarani',
-        organizacao:'Quórum de Elderes',
-        sexo: 'masculino',
-
+        sexo: 'Masculino',
+        endereco: 'Bairro Guarani, Ed. Sol',
+        organizacao: 'Quórum de Elderes',
+        dataDeBatismo: '2008-06-01',
+        descricao:
+            'Trabalha com logística. Disponível para tarefas de transporte.',
     },
-
-
     {
-        name: 'Isabela',
+        id: 9,
+        nome: 'Isabela',
         sobrenome: 'Mendes',
         idade: 23,
-        endereco: 'bairro guarani',
-        organizacao:'Sociedade Socorro',
         sexo: 'Feminino',
-
+        endereco: 'Bairro Guarani, Rua das Flores',
+        organizacao: 'Sociedade de Socorro',
+        dataDeBatismo: '2008-12-05',
+        descricao:
+            'Líder de grupo. Demonstra forte capacidade de organização e liderança.',
     },
-
-
     {
-        name: 'Lucas',
+        id: 10,
+        nome: 'Lucas',
         sobrenome: 'Carvalho',
         idade: 23,
-        endereco: 'bairro guarani',
-        organizacao:'Rapazes',
-        sexo: 'masculino',
-
-    },    {
-        name: 'Mariana',
+        sexo: 'Masculino',
+        endereco: 'Bairro Guarani, Estrada Velha',
+        organizacao: 'Rapazes',
+        dataDeBatismo: '2008-11-01',
+        descricao:
+            'Interessado em esportes e atividades ao ar livre. Ótimo com planejamento de lazer.',
+    },
+    {
+        id: 11,
+        nome: 'Mariana',
         sobrenome: 'Gomes',
         idade: 23,
-        endereco: 'bairro guarani',
-        organizacao:'Sociedade de Socorro',
         sexo: 'Feminino',
-
+        endereco: 'Bairro Guarani, Novo Lote',
+        organizacao: 'Sociedade de Socorro',
+        dataDeBatismo: '2008-08-15',
+        descricao:
+            'Disponível para auxílio nos estudos bíblicos. Mora próximo à capela.',
     },
     {
-        name: 'Pedro',
+        id: 12,
+        nome: 'Pedro',
         sobrenome: 'Martins',
         idade: 23,
-        endereco: 'bairro guarani',
-        organizacao:'Rapazes',
-        sexo: 'masculino',
-
+        sexo: 'Masculino',
+        endereco: 'Bairro Guarani, Próximo ao Colégio',
+        organizacao: 'Rapazes',
+        dataDeBatismo: '2008-05-20',
+        descricao:
+            'Tem habilidades em carpintaria. Pode ajudar em pequenos reparos na organização.',
     },
     {
-        name: 'Rafaela',
+        id: 13,
+        nome: 'Rafaela',
         sobrenome: 'Lima',
         idade: 23,
-        endereco: 'bairro guarani',
-        organizacao:'Moças',
         sexo: 'Feminino',
-
+        endereco: 'Bairro Guarani, Conjunto A',
+        organizacao: 'Moças',
+        dataDeBatismo: '2009-02-14',
+        descricao:
+            'Recém-chegada à organização. Muito engajada nas reuniões semanais.',
     },
     {
-        name: 'Thiago',
+        id: 14,
+        nome: 'Thiago',
         sobrenome: 'Souza',
         idade: 23,
-        endereco: 'bairro guarani',
-        organizacao:'Quórum de Elderes',
-        sexo: 'masculino',
-
+        sexo: 'Masculino',
+        endereco: 'Bairro Guarani, Rua Principal',
+        organizacao: 'Quórum de Elderes',
+        dataDeBatismo: '2008-03-30',
+        descricao:
+            'Contador por profissão. Ajuda com a tesouraria da organização.',
     },
     {
-        name: 'Vitória',
+        id: 15,
+        nome: 'Vitória',
         sobrenome: 'Fernandes',
         idade: 23,
-        endereco: 'bairro guarani',
-        organizacao:'Sociedade de Socorro',
         sexo: 'Feminino',
-
-    }
-    
-
+        endereco: 'Bairro Guarani, Rua do Bosque',
+        organizacao: 'Sociedade de Socorro',
+        dataDeBatismo: '2008-07-05',
+        descricao:
+            'Líder de jovens na sua região. Forte foco em mentoria e desenvolvimento pessoal.',
+    },
 ];
+
+export default membros;
