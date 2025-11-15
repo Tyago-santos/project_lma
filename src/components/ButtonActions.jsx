@@ -14,17 +14,17 @@ const StyledButton = styled.button`
         ${({ $active, theme }) => ($active ? '#fff' : theme.colors.button)}; /* Borda sólida primária */
 
     @media (max-width: 375px) {
-        font-size: 7px;
-        padding: 1em 1rem;
+        font-size: 5px;
+        padding: 0.5em 0.5em;
     }
 
     @media (max-width: 320px) {
-        font-size: 5px;
-        padding: 1em 1rem;
+        font-size: 40px;
+        padding: 1em 1em;
     }
 
     @media (max-width: 556px) {
-        font-size: 11px;
+        font-size: 8px;
         padding: 1em 1rem;
     }
 

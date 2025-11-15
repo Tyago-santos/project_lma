@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-# Arquivo: render.yaml
->>>>>>> 03198309b8e997b7405c471ab2816066148aadd6
 redirects:
     - from: /*
       to: /index.html

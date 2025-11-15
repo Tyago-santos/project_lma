@@ -6,8 +6,6 @@ import { setShowModaData } from '../reducer/themeReducer/themeSlice';
 const Wapper = styled.table`
     width: 100%;
     color: ${(props) => props.theme.colors.text};
-    @media (max-width: 375px) {
-    }
 
     & th {
         background-color: ${(props) => props.theme.colors.surface};
@@ -15,11 +13,11 @@ const Wapper = styled.table`
         color: ${(props) => props.theme.colors.text};
         text-align: center;
         @media (max-width: 375px) {
-            font-size: 0.7rem;
+            font-size: 0.7em;
         }
 
         @media (max-width: 556px) {
-            font-size: 0.7rem;
+            font-size: 0.7em;
         }
     }
 
@@ -27,6 +25,9 @@ const Wapper = styled.table`
         text-align: center;
         @media (max-width: 375px) {
             font-size: 0.7em;
+        }
+        @media (max-width: 320px) {
+            font-size: 0.5em;
         }
 
         @media (max-width: 556px) {
