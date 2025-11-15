@@ -17,12 +17,20 @@ const Wapper = styled.table`
         @media (max-width: 375px) {
             font-size: 0.7rem;
         }
+
+        @media (max-width: 556px) {
+            font-size: 0.7rem;
+        }
     }
 
     & tr {
         text-align: center;
         @media (max-width: 375px) {
             font-size: 0.7em;
+        }
+
+        @media (max-width: 556px) {
+            font-size: 0.7rem;
         }
     }
 

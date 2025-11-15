@@ -76,6 +76,10 @@ const ToggleButton = styled.button`
     @media (max-width: 320px) {
         font-size: 0.2rem;
     }
+
+    @media (max-width: 556px) {
+        font-size: 0.5rem;
+    }
 `;
 
 const ControlsWrapper = styled.div`

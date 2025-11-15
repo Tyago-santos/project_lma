@@ -23,6 +23,11 @@ const StyledButton = styled.button`
         padding: 1em 1rem;
     }
 
+    @media (max-width: 556px) {
+        font-size: 11px;
+        padding: 1em 1rem;
+    }
+
     /* Layout */
     outline: none;
     padding: 0.6em 1.5rem; /* Aumenta o padding para melhor toque/clique */
