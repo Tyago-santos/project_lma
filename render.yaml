@@ -1,16 +1,3 @@
-# Arquivo: render.yaml
-# Isso garante que todas as rotas (URLs) não encontradas sejam redirecionadas para o index.html,
-# permitindo que o React Router assuma o controle.
-
-headers:
-    - path: /*
-      headers:
-          - key: X-Frame-Options
-            value: DENY
-          - key: X-XSS-Protection
-            value: 1; mode=block
-          - key: X-Content-Type-Options
-            value: nosniff
 redirects:
     - from: /*
       to: /index.html
