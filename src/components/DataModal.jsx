@@ -62,6 +62,10 @@ const Modal = styled.div`
     @media (max-width: 375px) {
         max-height: 70vh;
     }
+
+    @media (max-width: 556) {
+        max-height: 65vh;
+    }
 `;
 
 // 2.3. Ícone/Botão de Fechar (Reutilizado)
