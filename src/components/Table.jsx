@@ -1,12 +1,12 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
+import { setShowModaData } from '../reducer/themeReducer/themeSlice';
 
 const Wapper = styled.table`
     width: 100%;
     color: ${(props) => props.theme.colors.text};
     @media (max-width: 375px) {
-        height: 1000px;
     }
 
     & th {
@@ -41,31 +41,35 @@ const Wapper = styled.table`
     }
 `;
 
-const Table = ({ Person }) => {
-    console.log(Person);
-    const navigate = useNavigate();
+const Table = ({ Person, onSend }) => {
+    const dispatch = useDispatch();
+    //const toggleModal = useSelector(({ theme }) => theme.showModalData); // Controla a visibilidade via Redux
+
+    const handleOpenModalData = (value) => {
+        dispatch(setShowModaData({ showModalData: true }));
+        onSend(value);
+    };
 
     return (
         <Wapper>
             <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>Sobrenome</th>
+                    <th>Data de Batismo</th>
                     <th>Idade</th>
                     <th>Organização</th>
                 </tr>
             </thead>
 
             <tbody>
-                {Person.map((item, index) => (
-                    <tr
-                        onClick={() =>
-                            navigate('/person', { state: { id: index } })
-                        }
-                        key={index}
-                    >
+                {Person.map((item) => (
+                    <tr onClick={() => handleOpenModalData(item)} key={item.id}>
                         <td>{item.nome}</td>
-                        <td>{item.sobrenome}</td>
+                        <td>
+                            {item.dataDeBatismo
+                                .toDate()
+                                .toLocaleDateString('pt-br')}
+                        </td>
                         <td>{item.idade}</td>
                         <td>{item.organizacao}</td>
                     </tr>

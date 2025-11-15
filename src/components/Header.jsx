@@ -4,8 +4,7 @@ import Switch from 'react-switch';
 import { useDispatch, useSelector } from 'react-redux';
 import { FaMoon, FaSun } from 'react-icons/fa'; // Importando ícones
 
-import ButtonActions from './ButtonActions';
-import { changeTheme, setShowModal } from '../reducer/themeReducer/themeSlice';
+import { changeTheme } from '../reducer/themeReducer/themeSlice';
 
 // --- Componentes Estilizados (Refatorados) ---
 const Wrapper = styled.header`
@@ -67,10 +66,6 @@ const Header = () => {
         dispatch(changeTheme({ themeDark: !isDarkTheme }));
     };
 
-    const handleOpenModal = () => {
-        dispatch(setShowModal({ showModal: true }));
-    };
-
     // Ícones customizados para o Switch
     const iconStyles = {
         display: 'flex',
@@ -113,9 +108,6 @@ const Header = () => {
                             </div> // Ícone do Sol para Light Mode (checked=false)
                         }
                     />
-                    <ButtonActions onClick={handleOpenModal} Icone={true}>
-                        Criar nova tabela
-                    </ButtonActions>
                 </Nav>
             </Container>
         </Wrapper>

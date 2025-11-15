@@ -4,18 +4,18 @@ const themeSlice = createSlice({
     name: 'theme',
     initialState: {
         themeDark: true,
-        showModal: true,
+        showModalData: false,
     },
     reducers: {
         changeTheme(state, action) {
             state.themeDark = action.payload.themeDark;
         },
-
-        setShowModal(state, action) {
-            state.showModal = action.payload.showModal;
+        setShowModaData(state, action) {
+            state.showModalData = action.payload.showModalData;
         },
     },
 });
 
-export const { changeTheme, setShowModal } = themeSlice.actions;
+export const { changeTheme, setShowModal, setShowModaData } =
+    themeSlice.actions;
 export default themeSlice.reducer;

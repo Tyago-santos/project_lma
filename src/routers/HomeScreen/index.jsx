@@ -1,20 +1,28 @@
-import React, { useRef, useState, useMemo } from 'react';
+import React, { useRef, useState, useMemo, useEffect } from 'react';
 import styled from 'styled-components';
 import ButtonActions from '../../components/ButtonActions';
 import ButtonSelected from '../../components/ButtonSelected';
 import LessonPlan from '../../components/LessonPlan';
 
 import Table from '../../components/Table';
-
-import api from '../../api'; // Seus dados
+//import api from '../../api'; //
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import DataViewModal from '../../components/DataModal';
+//import realData, { db } from '../../fiebaseConfig';
+import { db } from '../../fiebaseConfig';
+import { collection, getDocs } from 'firebase/firestore';
 
 const PageWrapper = styled.div`
     // Alterado de Wrappper para PageWrapper
     background-color: ${({ theme }) => theme.colors.background};
     min-height: calc(100vh - 80px); /* Ajusta à altura do header */
     padding: 30px 0;
+
+    @media (max-width: 375px) {
+        padding: 0;
+        min-height: 100vw;
+    }
 `;
 
 const ContentContainer = styled.div`
@@ -64,6 +72,10 @@ const ToggleButton = styled.button`
         font-size: 0.5rem;
         padding: 16px 5px;
     }
+
+    @media (max-width: 320px) {
+        font-size: 0.2rem;
+    }
 `;
 
 const ControlsWrapper = styled.div`
@@ -79,12 +91,38 @@ const StyledSwiper = styled(Swiper)`
     }
 `;
 
+const SwiperStyle = styled(SwiperSlide)`
+    @media (max-width: 375px) {
+        max-width: 320px;
+    }
+`;
+
 export default function Home() {
     // Usando apenas um estado para o índice do Swiper
     const [activeIndex, setActiveIndex] = useState(0);
     const [currentFilter, setCurrentFilter] = useState('Todos');
+    const [listPerson, setListPersons] = useState([]);
+    const [objectModalView, setObjectModalView] = useState({});
 
     const swiperRef = useRef(null);
+
+    useEffect(() => {
+        async function getList() {
+            const querySnapshot = await getDocs(collection(db, 'semana 1'));
+            const dados = await querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+
+            setListPersons(dados);
+        }
+
+        getList();
+    }, []);
+
+    const separedArray = useMemo(() => {
+        return listPerson.map((item) => item.planoDeAla).flat();
+    }, [listPerson]);
 
     // 1. Inicializa o estado 'person' com todos os dados da API ao montar
 
@@ -93,10 +131,10 @@ export default function Home() {
     // 3. Filtra os dados sempre que 'currentFilter' muda
     const filteredPerson = useMemo(() => {
         if (currentFilter === 'Todos') {
-            return api;
+            return listPerson;
         }
-        return api.filter((item) => item.organizacao === currentFilter);
-    }, [currentFilter]);
+        return listPerson.filter((item) => item.organizacao === currentFilter);
+    }, [currentFilter, listPerson]);
 
     // --- Lógica do Swiper (Simplificada) ---
 
@@ -108,6 +146,17 @@ export default function Home() {
                 swiperRef.current.slideNext();
             }
         }
+    };
+
+    const handleGetPersonData = (val) => {
+        const { planoDeAla, id, ...rest } = val;
+        const newArr = {
+            ...rest,
+            dataDeBatismo: rest.dataDeBatismo
+                .toDate()
+                .toLocaleDateString('pt-br'),
+        };
+        setObjectModalView(newArr);
     };
 
     const handleFilterPerson = (value) => {
@@ -123,17 +172,42 @@ export default function Home() {
         setActiveIndex(swiper.activeIndex);
     };
 
+    const buttonsActios = [
+        { classList: 'semana 1', id: 0 },
+        { classList: 'semana 2', id: 1 },
+        { classList: 'semana 3', id: 2 },
+        { classList: 'semana 4', id: 3 },
+    ];
+
+    const handleClickGetAll = async (id) => {
+        const elButton = document.querySelectorAll('.dates-wrapper button');
+        elButton.forEach((item) => item.classList.remove('active'));
+        elButton[id].classList.add('active');
+
+        const querySnapshot = await getDocs(
+            collection(db, 'semana ' + (id + 1)),
+        );
+        const dados = await querySnapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+        }));
+
+        setListPersons(dados);
+    };
+
     return (
         <PageWrapper>
             <ContentContainer>
                 <HeaderContainer>
                     <div className="dates-wrapper">
-                        {/* Exemplo de botões de data */}
-                        <ButtonActions>12-3-2025</ButtonActions>
-                        <ButtonActions>12-3-2025</ButtonActions>
-                        <ButtonActions>12-3-2025</ButtonActions>
-                        <ButtonActions>12-3-2025</ButtonActions>
-                        {/* ... */}
+                        {buttonsActios.map((item) => (
+                            <ButtonActions
+                                onClick={() => handleClickGetAll(item.id)}
+                                key={item.id}
+                            >
+                                {item.classList}
+                            </ButtonActions>
+                        ))}
                     </div>
 
                     <ControlsWrapper>
@@ -160,16 +234,19 @@ export default function Home() {
 
                 {/* Visual do Slider/Swiper */}
                 <StyledSwiper
-                    style={{ height: '100%', minHeight: '600px' }} // Altura mínima definida
+                    // style={{ height: '100%' }} // Altura mínima definida
                     spaceBetween={50}
                     slidesPerView={1}
                     onSlideChange={handleChangeSpaceActive}
                     onSwiper={(swiper) => (swiperRef.current = swiper)}
                     initialSlide={0}
                 >
-                    <SwiperSlide>
-                        <Table Person={filteredPerson} />
-                    </SwiperSlide>
+                    <SwiperStyle>
+                        <Table
+                            onSend={handleGetPersonData}
+                            Person={filteredPerson}
+                        />
+                    </SwiperStyle>
 
                     <SwiperSlide style={{ padding: 20 }}>
                         {/* Repetição de LessonPlan */}
@@ -181,18 +258,14 @@ export default function Home() {
                                 gap: '20px',
                             }}
                         >
-                            <LessonPlan />
-                            <LessonPlan />
-                            <LessonPlan />
-
-                            <LessonPlan />
-                            <LessonPlan />
-                            <LessonPlan />
-                            {/* ... outros LessonPlan ... */}
+                            {separedArray.map((item, index) => (
+                                <LessonPlan key={index} data={item} />
+                            ))}
                         </div>
                     </SwiperSlide>
                 </StyledSwiper>
             </ContentContainer>
+            <DataViewModal dataToView={objectModalView} />
         </PageWrapper>
     );
 }

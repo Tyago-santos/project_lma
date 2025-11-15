@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -10,6 +10,34 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     }
 
+
+    
+    & ::-webkit-scrollbar {
+    width: 8px;
+    }
+
+    /* ::-webkit-scrollbar-thumb - A alça (o botão que move) */
+    & ::-webkit-scrollbar-thumb {
+    background-color: ${(props) => props.theme.colors.button}; /* Cor principal */
+    border-radius: 4px;
+    }
+
+    /* ::-webkit-scrollbar-track - A trilha por onde a alça desliza */
+    &::-webkit-scrollbar-track {
+    background-color: ${(props) => props.theme.colors.surface};
+    border-radius: 4px;
+    }
+
+    /* Estilo ao passar o mouse */
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: ${(props) => props.theme.colors.button};
+    }
+
+    &::-webkit-scrollbar-button {
+        display: none; 
+    }
+
+
     html, body {
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
@@ -18,7 +46,7 @@ export const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     font-family:'Roboto';
 
-    background-color:${props => props.theme.colors.background};
+    background-color:${(props) => props.theme.colors.background};
 
     }
 
@@ -53,5 +81,3 @@ export const GlobalStyle = createGlobalStyle`
 
 
 `;
-
-
