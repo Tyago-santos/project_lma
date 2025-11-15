@@ -70,7 +70,7 @@ const ToggleButton = styled.button`
 
     @media (max-width: 375px) {
         font-size: 0.5rem;
-        padding: 16px 5px;
+        padding: 12px 5px;
     }
 
     @media (max-width: 320px) {
@@ -79,6 +79,7 @@ const ToggleButton = styled.button`
 
     @media (max-width: 556px) {
         font-size: 0.5rem;
+        padding: 12px 5px;
     }
 `;
 
