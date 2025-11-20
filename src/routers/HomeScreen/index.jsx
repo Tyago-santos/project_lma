@@ -111,9 +111,14 @@ export default function Home() {
 
     const swiperRef = useRef(null);
 
+    const nowDate = new Date();
+    const dayChoose = Math.floor(nowDate.getDate() / 7);
+
     useEffect(() => {
         async function getList() {
-            const querySnapshot = await getDocs(collection(db, 'semana 1'));
+            const querySnapshot = await getDocs(
+                collection(db, 'semana ' + dayChoose),
+            );
             const dados = await querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data(),
@@ -123,10 +128,13 @@ export default function Home() {
         }
 
         getList();
+        handleClickGetAll(dayChoose - 1);
     }, []);
 
     const separedArray = useMemo(() => {
-        return listPerson.map((item) => item.planoDeAla).flat();
+        return listPerson
+            ?.map((item) => (item.planoDeAla ? item.planoDeAla : []))
+            .flat();
     }, [listPerson]);
 
     // 1. Inicializa o estado 'person' com todos os dados da API ao montar
@@ -184,9 +192,10 @@ export default function Home() {
         { classList: 'semana 4', id: 3 },
     ];
 
-    const handleClickGetAll = async (id) => {
+    async function handleClickGetAll(id) {
         const elButton = document.querySelectorAll('.dates-wrapper button');
         elButton.forEach((item) => item.classList.remove('active'));
+
         elButton[id].classList.add('active');
 
         const querySnapshot = await getDocs(
@@ -198,7 +207,7 @@ export default function Home() {
         }));
 
         setListPersons(dados);
-    };
+    }
 
     return (
         <PageWrapper>
@@ -263,9 +272,10 @@ export default function Home() {
                                 gap: '20px',
                             }}
                         >
-                            {separedArray.map((item, index) => (
-                                <LessonPlan key={index} data={item} />
-                            ))}
+                            {separedArray &&
+                                separedArray?.map((item, index) => (
+                                    <LessonPlan key={index} data={item} />
+                                ))}
                         </div>
                     </SwiperSlide>
                 </StyledSwiper>
