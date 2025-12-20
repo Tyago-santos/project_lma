@@ -3,6 +3,7 @@ import styled, { useTheme } from 'styled-components';
 import Switch from 'react-switch';
 import { useDispatch, useSelector } from 'react-redux';
 import { FaMoon, FaSun } from 'react-icons/fa'; // Importando ícones
+import { Link, useLocation } from 'react-router-dom';
 
 import { changeTheme } from '../reducer/themeReducer/themeSlice';
 
@@ -53,12 +54,31 @@ const Nav = styled.nav`
 const CustomSwitch = styled(Switch)`
     /* Estilos adicionais se necessário */
 `;
+const LinkText = styled.span`
+    display: block;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    background-color: ${(props) => props.theme.colors.button};
+    font-family: 'Roboto';
+    border: 2px solid transparent;
+
+    @media (max-width: 424px) {
+        font-size: 10px;
+    }
+
+    &:hover {
+        background-color: #fff;
+        color: ${(props) => props.theme.colors.button};
+        border: 2px solid ${(props) => props.theme.colors.button};
+    }
+`;
 
 const Header = () => {
     // theme é um booleano (true=Dark, false=Light)
     const isDarkTheme = useSelector((state) => state.theme.themeDark);
     const dispatch = useDispatch();
-
+    const location = useLocation();
     // Objeto do tema atual (contém theme.colors)
     const themeContext = useTheme();
 
@@ -75,7 +95,7 @@ const Header = () => {
         color: 'white',
         fontSize: 12,
     };
-
+    console.log(location.pathname);
     return (
         <Wrapper>
             <Container>
@@ -108,6 +128,15 @@ const Header = () => {
                             </div> // Ícone do Sol para Light Mode (checked=false)
                         }
                     />
+                    {location.pathname === '/dashboard' ? (
+                        <Link to="/">
+                            <LinkText>Voltar para Home</LinkText>
+                        </Link>
+                    ) : (
+                        <Link to="/dashboard">
+                            <LinkText>Plano de Missão da Ala</LinkText>
+                        </Link>
+                    )}
                 </Nav>
             </Container>
         </Wrapper>

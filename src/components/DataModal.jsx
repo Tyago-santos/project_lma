@@ -63,7 +63,7 @@ const Modal = styled.div`
         max-height: 70vh;
     }
 
-    @media (max-width: 556) {
+    @media (max-width: 556px) {
         max-height: 65vh;
     }
 `;
@@ -194,6 +194,10 @@ export function DataViewModal({ dataToView }) {
         dispatch(setShowModaData({ showModalData: false }));
     };
 
+    const hanfleCheckedVisit = () => {
+        return null;
+    };
+
     // Filtra campos para a grade principal e deixa a descrição em largura total
     const fieldsToDisplay = Object.entries(dataToView).filter(
         ([key]) => key !== 'descricao',
@@ -242,9 +246,14 @@ export function DataViewModal({ dataToView }) {
                     isFullWidth
                 />
 
-                <StyledButton type="button" onClick={handleCloseModal}>
-                    Ok, Fechar
-                </StyledButton>
+                <Grid>
+                    <StyledButton type="button" onClick={handleCloseModal}>
+                        Ok, Fechar
+                    </StyledButton>
+                    <StyledButton type="button" onClick={hanfleCheckedVisit}>
+                        Marcar Visitar
+                    </StyledButton>
+                </Grid>
             </Modal>
         </Wrapper>
     );
