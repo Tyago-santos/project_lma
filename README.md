@@ -1,12 +1,91 @@
-# React + Vite
+📄 **README do Projeto – Acompanhamento de Pessoas**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 🎯 Objetivo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este projeto foi desenvolvido para **relatar e acompanhar o progresso das pessoas** atendidas pelos missionários da Igreja de Jesus Cristo dos Santos dos Últimos Dias.  
+Com a aplicação, colaboradores e membros que trabalham junto aos missionários conseguem:
 
-## Expanding the ESLint configuration
+- Visualizar evolução pessoal
+- Acompanhar metas e planos
+- Conferir desempenho semanal 🎯
+- Organizar visualizações por unidade da igreja (organização)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+O sistema também permite monitorar o trabalho dos missionários em tempo real.
+
+---
+
+## 📱 Ecosistema
+
+Além da interface web principal, há um **aplicativo React/Expo** onde (repositório disponível em https://github.com/Tyago-santos/lma-mobile):
+
+- Usuários podem **inserir todos os planos e metas** das reuniões
+- Dados são sincronizados com a aplicação web
+- Facilita registros durante visitas e estudos
+
+---
+
+## ⚙️ Tecnologias Utilizadas
+
+| Tipo          | Ferramenta / Biblioteca                     |
+| ------------- | ------------------------------------------- |
+| Front-end web | React + Vite                                |
+| Estilização   | Styled-components / GlobalStyle             |
+| Estado        | Redux Toolkit (`themeSlice` etc.)           |
+| Roteamento    | React Router                                |
+| Configurações | `package.json`, `vite.config.js`            |
+| Linter        | ESLint                                      |
+| Outros        | Firebase (presumido por `fiebaseConfig.js`) |
+
+> 🔧 O projeto está organizado em componentes reutilizáveis, reducers para temas, e rotas para diferentes telas.
+
+---
+
+## 🚀 Como Usar
+
+1. **Clonar o repositório**
+
+    ```bash
+    git clone <URL-do-repo>
+    cd project_lma
+    ```
+
+2. **Instalar dependências**
+
+    ```bash
+    npm install
+    ```
+
+3. **Executar em modo de desenvolvimento**
+
+    ```bash
+    npm run dev
+    ```
+
+    - Acesso geralmente em `http://localhost:3000` (ver `vite.config.js`)
+
+4. **Aplicativo mobile**
+    - Navegue até a pasta do app Expo (se existir)
+    - Instale dependências e execute com `expo start`
+
+---
+
+## ⚙️ Funcionalidades Principais
+
+- ✅ Exibição de progresso **por semana**
+- ✅ Filtros por **organização da igreja**
+- ✅ Criação e edição de **metas e planos**
+- ✅ Visualização do andamento do trabalho missionário
+- 📊 Interface de acompanhamento orientada por usuário e por organização
+
+---
+
+## 📁 Estrutura do Projeto
+
+```
+
+
+---
+
+```
