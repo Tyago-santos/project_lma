@@ -47,7 +47,7 @@ Além da interface web principal, há um **aplicativo React/Expo** onde (reposit
 1. **Clonar o repositório**
 
     ```bash
-    git clone <URL-do-repo>
+    git clone <https://github.com/Tyago-santos/project_lma>
     cd project_lma
     ```
 
@@ -81,11 +81,7 @@ Além da interface web principal, há um **aplicativo React/Expo** onde (reposit
 
 ---
 
-## 📁 Estrutura do Projeto
-
-```
 
 
----
 
 ```
