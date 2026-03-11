@@ -1,3 +1,5 @@
+![Logo](./logo.png)
+
 📄 **README do Projeto – Acompanhamento de Pessoas**
 
 ---
