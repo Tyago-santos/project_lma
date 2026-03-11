@@ -1,6 +1,6 @@
-![Logo](./logo.png)
+![Logo](public/logo.png)
 
-📄 **README do Projeto – Acompanhamento de Pessoas**
+📄 **Acompanhamento de Pessoas**
 
 ---
 
@@ -83,7 +83,6 @@ Além da interface web principal, há um **aplicativo React/Expo** onde (reposit
 
 ---
 
-
-
+```
 
 ```
