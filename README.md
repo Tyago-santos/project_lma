@@ -1,5 +1,13 @@
 ![Logo](public/logo.png)
 
+## 🎬 Demonstrações
+
+![Dashboard](public/lma-dasboard.gif)
+
+![Home](public/lma-home.gif)
+
+![Mobile](public/lma-mobile.gif)
+
 📄 **Acompanhamento de Pessoas**
 
 ---
@@ -82,7 +90,3 @@ Além da interface web principal, há um **aplicativo React/Expo** onde (reposit
 - 📊 Interface de acompanhamento orientada por usuário e por organização
 
 ---
-
-```
-
-```
